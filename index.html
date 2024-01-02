@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Points Checker</title>
+</head>
+<body>
+
+<div id="pointsContainer"></div>
+
+<script>
+  // Sample Google Sheets API endpoint (replace with your own)
+  const sheetApiUrl = 'YOUR_GOOGLE_SHEETS_API_URL';
+
+  // Fetch data from Google Sheets API
+  fetch(sheetApiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Process data and update the HTML content
+      const pointsContainer = document.getElementById('pointsContainer');
+      // Use data to update the content dynamically
+      pointsContainer.innerHTML = `Member Points: ${data.memberPoints}`;
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+
+</body>
+</html>
